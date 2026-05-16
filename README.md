@@ -1,50 +1,115 @@
 # Event Registration System
 
-## Project Overview
-This project is built using FastAPI and MongoDB Atlas.
+## Overview
 
-It allows:
-- Creating participants
-- Creating events
-- Registering participants for events
-- Waitlist handling when seats are full
-- Participant check-in
+Event Registration System is a backend API application developed using FastAPI and MongoDB Atlas. The project manages participants, events, registrations, waitlists, and event check-ins through REST APIs.
 
-## Technologies Used
-- FastAPI
-- MongoDB Atlas
-- Beanie ODM
-- Python
+---
 
-## Setup Steps
+## Key Features
+
+* Participant management
+* Event creation and retrieval
+* Event registration system
+* Automatic waitlist handling
+* Participant check-in functionality
+* MongoDB Atlas database integration
+* Swagger API documentation support
+
+---
+
+## Technology Stack
+
+* Python
+* FastAPI
+* MongoDB Atlas
+* Beanie ODM
+* Pydantic
+* Uvicorn
+
+---
+
+## Project Structure
+
+```bash
+Event_Registration_System/
+│
+├── app/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── database.py
+│   └── main.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+## API Endpoints
+
+### Participant APIs
+
+| Method | Endpoint                       |
+| ------ | ------------------------------ |
+| POST   | /participants                  |
+| GET    | /participants/{participant_id} |
+
+### Event APIs
+
+| Method | Endpoint           |
+| ------ | ------------------ |
+| POST   | /events            |
+| GET    | /events/{event_id} |
+
+### Registration APIs
+
+| Method | Endpoint                   |
+| ------ | -------------------------- |
+| POST   | /registrations             |
+| PUT    | /checkin/{registration_id} |
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/kirthiga-2301/Event_Registration_System.git
+```
 
 ### Create Virtual Environment
+
+```bash
 python -m venv venv
+```
 
-### Activate Virtual Environment
+### Activate Environment
+
+```bash
 venv\Scripts\activate
+```
 
-### Install Requirements
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-### Run Server
+### Run Application
+
+```bash
 python -m uvicorn app.main:app --reload
+```
 
-## Swagger URL
+---
+
+## API Documentation
+
+Swagger documentation:
+
+```bash
 http://127.0.0.1:8000/docs
-
-## APIs
-
-### Participants
-POST /participants
-GET /participants/{participant_id}
-
-### Events
-POST /events
-GET /events/{event_id}
-
-### Registrations
-POST /registrations
-
-### Check-in
-PUT /checkin/{registration_id}
